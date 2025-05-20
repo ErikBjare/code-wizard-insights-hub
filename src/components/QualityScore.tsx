@@ -16,9 +16,9 @@ const QualityScore: React.FC<QualityScoreProps> = ({
   className 
 }) => {
   const getColor = (score: number) => {
-    if (score >= 80) return 'bg-code-green';
-    if (score >= 60) return 'bg-code-yellow';
-    return 'bg-code-red';
+    if (score >= 80) return 'bg-code-green text-white';
+    if (score >= 60) return 'bg-code-yellow text-gray-900';
+    return 'bg-code-red text-white';
   };
 
   const getLabel = (score: number) => {
@@ -35,7 +35,7 @@ const QualityScore: React.FC<QualityScoreProps> = ({
 
   return (
     <div className={cn("flex flex-col items-center", className)}>
-      <div className={cn("relative rounded-full flex items-center justify-center font-bold text-white", sizeClasses[size], getColor(score))}>
+      <div className={cn("relative rounded-full flex items-center justify-center font-bold shadow-md", sizeClasses[size], getColor(score))}>
         {score}%
       </div>
       {showLabel && <p className="mt-2 text-sm font-medium">{getLabel(score)}</p>}

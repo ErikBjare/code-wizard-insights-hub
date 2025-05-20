@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full">
+      <div className="flex min-h-screen w-full bg-background">
         <CodeAnalyticsSidebar />
         <main className="flex-1 overflow-auto">
           <div className="container py-6">
