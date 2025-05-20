@@ -34,7 +34,7 @@ const ComplexityChart: React.FC<ComplexityChartProps> = ({
     return null;
   };
 
-  const complexityColor = (complexity: number) => {
+  const getComplexityColor = (complexity: number) => {
     if (complexity > 20) return "#f44336";  // red
     if (complexity > 10) return "#ffeb3b";  // yellow
     return "#4caf50";  // green
@@ -73,8 +73,16 @@ const ComplexityChart: React.FC<ComplexityChartProps> = ({
               <Bar
                 dataKey="complexity"
                 radius={[4, 4, 0, 0]}
-                fill={(entry) => complexityColor(entry.complexity)}
-              />
+                fill="#4caf50"
+                fillOpacity={0.8}
+              >
+                {data.map((entry, index) => (
+                  <rect 
+                    key={`rect-${index}`} 
+                    fill={getComplexityColor(entry.complexity)} 
+                  />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>

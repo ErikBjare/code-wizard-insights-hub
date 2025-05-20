@@ -1,75 +1,75 @@
 
-// Mock data for code analytics dashboard
+// Mock data for code analytics dashboard based on this application's own code
 
 export const codeQualityMetrics = {
-  overall: 78,
-  maintainability: 82,
-  reliability: 73,
-  security: 80,
-  duplication: 8.5,
-  testCoverage: 76.4,
-  codeSmells: 28,
-  bugs: 5,
-  vulnerabilities: 2,
-  techDebt: "4d 2h"
+  overall: 82,
+  maintainability: 87,
+  reliability: 79,
+  security: 85,
+  duplication: 5.2,
+  testCoverage: 68.5,
+  codeSmells: 18,
+  bugs: 3,
+  vulnerabilities: 1,
+  techDebt: "2d 6h"
 };
 
 export const codeSmells = [
   {
     id: "cs-001",
-    file: "src/components/UserProfile.tsx",
-    line: 45,
-    type: "Complexity",
+    file: "src/components/ui/sidebar.tsx",
+    line: 762,
+    type: "Size",
     severity: "high",
-    message: "Function 'handleUserData' has a cyclomatic complexity of 15"
+    message: "File is extremely large (762 lines). Consider breaking it into smaller components"
   },
   {
     id: "cs-002",
-    file: "src/services/api.ts",
-    line: 87,
-    type: "Duplication",
+    file: "src/pages/Team.tsx",
+    line: 219,
+    type: "Size",
     severity: "medium",
-    message: "This block of code is duplicated in 3 files"
+    message: "Component is too large (219 lines). Consider extracting sub-components"
   },
   {
     id: "cs-003",
-    file: "src/utils/formatters.ts",
-    line: 124,
-    type: "Maintainability",
-    severity: "low",
-    message: "Function 'formatCurrency' is too large (52 lines)"
+    file: "src/components/ComplexityChart.tsx",
+    line: 76,
+    type: "TypeScript",
+    severity: "high",
+    message: "Type error: fill prop expects string but receives function"
   },
   {
     id: "cs-004",
-    file: "src/hooks/useAuth.ts",
+    file: "src/components/TeamPerformance.tsx",
     line: 36,
-    type: "Security",
-    severity: "high",
-    message: "Credentials are stored in localStorage"
+    type: "Performance",
+    severity: "medium",
+    message: "Sorting operation performed on each render"
   },
   {
     id: "cs-005",
-    file: "src/pages/Dashboard.tsx",
-    line: 217,
-    type: "Reliability",
-    severity: "medium",
-    message: "Component has too many state variables (15)"
+    file: "src/components/CodeSmellList.tsx",
+    line: 23,
+    type: "Maintainability",
+    severity: "low",
+    message: "Function could be extracted to avoid duplication"
   },
   {
     id: "cs-006",
-    file: "src/components/Table.tsx",
-    line: 92,
-    type: "Performance",
-    severity: "low",
-    message: "Inefficient list rendering without key prop"
+    file: "src/components/CodeAnalyticsSidebar.tsx",
+    line: 55,
+    type: "TypeScript",
+    severity: "high",
+    message: "Type 'true' is not assignable to type 'offcanvas' | 'icon' | 'none'"
   },
   {
     id: "cs-007",
-    file: "src/store/userSlice.ts",
+    file: "src/pages/Team.tsx",
     line: 54,
-    type: "Complexity",
+    type: "TypeScript",
     severity: "medium",
-    message: "Reducer function has too many cases (12)"
+    message: "Property 'avatar' does not exist on TeamMember type"
   }
 ] as Array<{
   id: string;
@@ -81,56 +81,61 @@ export const codeSmells = [
 }>;
 
 export const fileComplexity = [
-  { name: "UserProfile.tsx", complexity: 24, lines: 312 },
-  { name: "api.ts", complexity: 18, lines: 246 },
-  { name: "Dashboard.tsx", complexity: 16, lines: 284 },
-  { name: "useAuth.ts", complexity: 12, lines: 156 },
-  { name: "formatters.ts", complexity: 9, lines: 178 },
-  { name: "Table.tsx", complexity: 8, lines: 142 },
-  { name: "userSlice.ts", complexity: 7, lines: 87 },
-  { name: "Menu.tsx", complexity: 5, lines: 62 }
+  { name: "sidebar.tsx", complexity: 31, lines: 762 },
+  { name: "Team.tsx", complexity: 18, lines: 219 },
+  { name: "Index.tsx", complexity: 14, lines: 186 },
+  { name: "CodeAnalyticsSidebar.tsx", complexity: 10, lines: 106 },
+  { name: "ComplexityChart.tsx", complexity: 8, lines: 90 },
+  { name: "TeamPerformance.tsx", complexity: 7, lines: 82 },
+  { name: "CodeSmellList.tsx", complexity: 6, lines: 77 },
+  { name: "QualityScore.tsx", complexity: 5, lines: 45 }
 ];
 
 export const teamMembers = [
   {
     id: "tm-001",
-    name: "Sarah Jenkins",
-    score: 92,
-    commits: 153,
-    additions: 7842,
-    deletions: 4231
+    name: "Alex Morgan",
+    score: 91,
+    commits: 142,
+    additions: 8624,
+    deletions: 3218,
+    avatar: "https://i.pravatar.cc/150?u=alex"
   },
   {
     id: "tm-002",
-    name: "Mike Chen",
-    score: 87,
+    name: "Jamie Chen",
+    score: 86,
     commits: 127,
-    additions: 5486,
-    deletions: 3842
+    additions: 5982,
+    deletions: 2435,
+    avatar: "https://i.pravatar.cc/150?u=jamie"
   },
   {
     id: "tm-003",
-    name: "Alex Rodriguez",
-    score: 76,
+    name: "Taylor Swift",
+    score: 78,
     commits: 98,
     additions: 4231,
-    deletions: 2842
+    deletions: 1842,
+    avatar: "https://i.pravatar.cc/150?u=taylor"
   },
   {
     id: "tm-004",
-    name: "Taylor Kim",
-    score: 69,
-    commits: 82,
-    additions: 3756,
-    deletions: 1953
+    name: "Jordan Lee",
+    score: 73,
+    commits: 76,
+    additions: 3692,
+    deletions: 1584,
+    avatar: "https://i.pravatar.cc/150?u=jordan"
   },
   {
     id: "tm-005",
-    name: "Jordan Smith",
-    score: 64,
-    commits: 74,
-    additions: 2987,
-    deletions: 1423
+    name: "Casey Jones",
+    score: 68,
+    commits: 65,
+    additions: 2854,
+    deletions: 1163,
+    avatar: "https://i.pravatar.cc/150?u=casey"
   }
 ] as Array<{
   id: string;
@@ -139,42 +144,44 @@ export const teamMembers = [
   commits: number;
   additions: number;
   deletions: number;
+  avatar: string;
 }>;
 
 export const trendingMetrics = {
-  qualityTrend: "+3.2% since last month",
-  smellsTrend: "-5 since last analysis",
-  coverageTrend: "+2.1% since last sprint",
-  techDebtTrend: "-1d 4h since last month"
+  qualityTrend: "+4.3% since last month",
+  smellsTrend: "-7 since last analysis",
+  coverageTrend: "+1.8% since last sprint",
+  techDebtTrend: "-12h since last month"
 };
 
 export const documentationData = [
   {
     id: "doc-1",
-    title: "Code Quality Standards",
-    content: "Our team follows a set of code quality standards to ensure maintainability and reliability. These include: proper naming conventions, function length limits, and test coverage requirements.",
-    category: "standards",
-    lastUpdated: "2025-04-15"
+    title: "Dashboard Components",
+    content: "The dashboard uses a component-based architecture with reusable UI elements like QualityScore, ComplexityChart, and CodeSmellList for visualizing code quality metrics.",
+    category: "architecture",
+    lastUpdated: "2025-05-15"
   },
   {
     id: "doc-2",
-    title: "Best Practices",
-    content: "Code review process, branch management strategy, and continuous integration practices are documented here.",
-    category: "practices",
-    lastUpdated: "2025-05-01"
+    title: "Sidebar Navigation",
+    content: "The CodeAnalyticsSidebar component provides navigation between different dashboard views, including the main dashboard, code quality metrics, code smells, and team performance.",
+    category: "components",
+    lastUpdated: "2025-05-12"
   },
   {
     id: "doc-3",
-    title: "Architecture Overview",
-    content: "The overall architecture of our system, including dependency flow, module organization, and component relationships.",
-    category: "architecture",
-    lastUpdated: "2025-03-22"
+    title: "Data Visualization",
+    content: "The application uses Recharts for data visualization, with custom styling and tooltips to maintain design consistency across the application.",
+    category: "ui",
+    lastUpdated: "2025-05-08"
   },
   {
     id: "doc-4",
-    title: "Testing Strategy",
-    content: "Our approach to unit testing, integration testing, and end-to-end testing, including coverage targets and tools used.",
-    category: "testing",
-    lastUpdated: "2025-04-28"
+    title: "Code Analysis Metrics",
+    content: "Our code metrics include complexity scores based on function size and cognitive complexity, code smells detection, and quality scores for maintainability, reliability, and security.",
+    category: "metrics",
+    lastUpdated: "2025-05-01"
   }
 ];
+

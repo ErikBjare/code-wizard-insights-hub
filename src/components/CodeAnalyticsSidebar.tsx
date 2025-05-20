@@ -52,7 +52,7 @@ const CodeAnalyticsSidebar = () => {
   const [isOpen, setIsOpen] = React.useState(true);
 
   return (
-    <Sidebar defaultCollapsed={false} collapsible>
+    <Sidebar defaultCollapsed={false} collapsible="icon">
       <SidebarHeader className="flex items-center px-2 py-4">
         <div className="flex items-center space-x-2 px-2">
           <FileCode className="h-6 w-6 text-primary" />
